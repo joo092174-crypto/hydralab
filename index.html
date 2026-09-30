@@ -34,6 +34,9 @@
   .warn { border-color: #4a2a2a; }
   .warn p { margin: 0 0 8px; font-size: 14px; }
   .warn p:last-child { margin: 0; }
+  .kr-notice { border-color: #4a2a2a; text-align: center; font-size: 14px; }
+  .kr-notice p { margin: 0; }
+  #referral[hidden], #kr-block[hidden] { display: none; }
   footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 24px; }
 </style>
 </head>
@@ -41,6 +44,10 @@
 <main>
   <h1>HYDRA LAB</h1>
   <p class="tag">A small real-money AI trading bot. We show every number — wins and losses.</p>
+
+  <section class="card kr-notice">
+    <p><b>Not available to residents of South Korea.</b> The exchange link on this page is for eligible countries only.</p>
+  </section>
 
   <section class="card">
     <h2>Season 2 · Sep 2–30, 2026</h2>
@@ -53,12 +60,16 @@
     <p class="note">One small account, one season. Past results do not predict future results. The bot also had a 12-trade losing streak.</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="referral" hidden>
     <h2>Open a Binance account</h2>
     <!-- REFERRAL_URL: 대표에게 받은 바이낸스 레퍼럴 링크로 교체 -->
     <a class="btn main" href="https://accounts.binance.com/register?ref=HYDRALAB" rel="sponsored noopener" target="_blank">Sign up with our referral link</a>
     <p class="note" style="text-align:center;margin:0 0 4px">Referral code: <b>HYDRALAB</b></p>
     <p class="note">This is a referral link. If you sign up with it, we may earn a commission. It costs you nothing extra. We do not manage your money, share our bot, or give trading signals.</p>
+  </section>
+
+  <section class="card kr-notice" id="kr-block" hidden>
+    <p>This page does not offer exchange sign-up links to visitors from South Korea.</p>
   </section>
 
   <section class="card">
@@ -73,10 +84,22 @@
     <h2>Please read</h2>
     <p><b>Not financial advice.</b> This is a public experiment, not a recommendation to buy, sell, or trade anything.</p>
     <p><b>You can lose money.</b> Crypto futures use leverage and can lose more than you expect. Only use money you can afford to lose.</p>
-    <p><b>Check your local rules.</b> Binance and crypto derivatives are restricted or not available in some countries (for example the US, the UK, and others). Do not sign up if it is not allowed where you live.</p>
+    <p><b>Check your local rules.</b> Binance and crypto derivatives are restricted or not available in some countries (for example South Korea, the US, the UK, and others). Do not sign up if it is not allowed where you live.</p>
   </section>
 
   <footer>HYDRA LAB · Experiment, not advice · Referral link disclosed</footer>
 </main>
+<script>
+  // Hide the exchange referral for visitors who look like South Korea residents
+  // (Korean browser language or Seoul time zone). Hidden by default without JS.
+  (function () {
+    var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]);
+    var isKoLang = langs.some(function (l) { return /^ko(-|$)/i.test(l || ""); });
+    var tz = "";
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+    var isKr = isKoLang || tz === "Asia/Seoul";
+    document.getElementById(isKr ? "kr-block" : "referral").hidden = false;
+  })();
+</script>
 </body>
 </html>

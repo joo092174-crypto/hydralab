@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYDRA LAB</title>
+<meta name="description" content="A small real-money AI trading bot experiment. Every number shown, wins and losses.">
+<style>
+  :root {
+    --bg: #0b0f14; --card: #131a22; --text: #e8edf2; --muted: #93a1b0;
+    --gold: #f0b90b; --line: #223040; --red: #ff6b6b; --green: #3ddc97;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 520px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: 0.04em; }
+  .tag { color: var(--muted); margin: 0 0 24px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+  .card h2 { font-size: 15px; margin: 0 0 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat b { display: block; font-size: 22px; }
+  .stat span { color: var(--muted); font-size: 13px; }
+  .up { color: var(--green); }
+  .note { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+  .btn {
+    display: block; text-align: center; text-decoration: none; font-weight: 700;
+    padding: 15px; border-radius: 12px; margin-bottom: 10px;
+  }
+  .btn.main { background: var(--gold); color: #111; font-size: 17px; }
+  .btn.alt { border: 1px solid var(--line); color: var(--text); }
+  .warn { border-color: #4a2a2a; }
+  .warn p { margin: 0 0 8px; font-size: 14px; }
+  .warn p:last-child { margin: 0; }
+  footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>HYDRA LAB</h1>
+  <p class="tag">A small real-money AI trading bot. We show every number — wins and losses.</p>
+
+  <section class="card">
+    <h2>Season 2 · Sep 2–30, 2026</h2>
+    <div class="stats">
+      <div class="stat"><b>28 days</b><span>zero human touches</span></div>
+      <div class="stat"><b>106.06 USDT</b><span>starting balance</span></div>
+      <div class="stat"><b class="up">+18.2%</b><span>realized profit</span></div>
+      <div class="stat"><b>42.5%</b><span>win rate (57 of 134)</span></div>
+    </div>
+    <p class="note">One small account, one season. Past results do not predict future results. The bot also had a 12-trade losing streak.</p>
+  </section>
+
+  <section class="card">
+    <h2>Open a Binance account</h2>
+    <!-- REFERRAL_URL: 대표에게 받은 바이낸스 레퍼럴 링크로 교체 -->
+    <span class="btn main" style="opacity:.55;cursor:default">Referral link coming soon</span>
+    <p class="note">This is a referral link. If you sign up with it, we may earn a commission. It costs you nothing extra. We do not manage your money, share our bot, or give trading signals.</p>
+  </section>
+
+  <section class="card">
+    <h2>Follow the experiment</h2>
+    <a class="btn alt" href="https://www.youtube.com/@HYDRA-LAB" target="_blank" rel="noopener">YouTube</a>
+    <a class="btn alt" href="https://www.tiktok.com/@hydralabai" target="_blank" rel="noopener">TikTok</a>
+    <a class="btn alt" href="https://x.com/HydraLabAI" target="_blank" rel="noopener">X</a>
+    <a class="btn alt" href="https://www.instagram.com/hydralab.ai/" target="_blank" rel="noopener">Instagram</a>
+  </section>
+
+  <section class="card warn">
+    <h2>Please read</h2>
+    <p><b>Not financial advice.</b> This is a public experiment, not a recommendation to buy, sell, or trade anything.</p>
+    <p><b>You can lose money.</b> Crypto futures use leverage and can lose more than you expect. Only use money you can afford to lose.</p>
+    <p><b>Check your local rules.</b> Binance and crypto derivatives are restricted or not available in some countries (for example the US, the UK, and others). Do not sign up if it is not allowed where you live.</p>
+  </section>
+
+  <footer>HYDRA LAB · Experiment, not advice · Referral link disclosed</footer>
+</main>
+</body>
+</html>
